@@ -1,6 +1,6 @@
 # Building-Algorithms-from-scratch
 
-In this repository I added my work on building Algorithms from scratch. I built these algorithms with basic python libraries like numpy and pandas. I didnot use any advanced libraries built specificly for Machine learning like scikit-learn. The algorithms that I built from scratch include Logistic Regression, Naive Bayes, KNN, HMM etc.
+In this repository I added my work on building Algorithms from scratch. I built these algorithms with basic python libraries like numpy and pandas. I didnot use any advanced libraries built specificly for Machine learning like scikit-learn. The algorithms that I built from scratch include Linear Regression (with basis functions),Logistic Regression, Naive Bayes, K-Nearest Neighbor, K-means clustering, Hidden Markov model etc.
 
 
 Naive Bayes on MNIST dataset:
