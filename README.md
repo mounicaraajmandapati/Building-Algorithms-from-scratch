@@ -31,3 +31,26 @@ In building the K-Nearest Neighbor algorithm on MNIST dataset, I followed these 
 ◆ Created a test dataset from MNIST test data consisting of 50 examples of each of three classes {1,2,7}.
 ◆ Using the best Nearest neighbor model selected by model validation, classified the test data.
 ◆ Compared teh accuracy of model on test data with its cross-validation accuracy and plotted some test set examples which are correctly and incorrectly.
+
+In buildling K-means clustering algorithm on MNIST dataset, I followed these steps after shaping them as explained previously.
+
+◆ Used MNIST test set with 10000 examples and implemented a K-means algorithm function that takes a value for the number of clusters to be found (K), a set of training examples and initial mean vector. 
+◆ This function returns a n-dimensional cluster assignment(n * k one hot matrix) and a converged mean vector.
+◆ At each iteration, a dot is printed as a progress indicator and once k-means objective function is minimised, the results are printed.
+◆ For initializations,K.means is built with (k=10) 3 different methods : 1. Ten data points chosen uniformly at random.  2. Ten data points found using k-means++ assignment algorithm.  3. A data point from each labeled class, found by looking at test set lables).
+◆ 28 * 28 images of random point from each cluster are visualized along with their cluster means.
+
+In building a Hidden Markov Model, I followed these steps:
+
+◆ A state mchine which mimics the "occasionally dishonest casino" is designed. This machine has two states, "Loaded" and "Fair".
+◆ When in "Fair" state, it outputs a values between 1 and 6 chosen uniformly at random.
+◆ When in "Loaded" state, it also outputs a value between 1 and 6, but this time the odds of emitting 1-5 are 0.1 each while the odds of emitting a 6 are 0.5.
+◆ The process is modelled to start with "Fair" state, and the output of this process for 1000 steps is captured with true state of hidden variable for each step.
+◆ Used forward-backward algorithm on vector of outputs, as well as true probabilities contained in transition and emission matrices to construct a MAP estimate of state distribution at each time point.
+◆ Generated 2 plots of estimate state probability of a loaded die at time t, compared to actual state(which was generated earlier)
+◆ One plot is estimate after performing forward pass but before computing the backward pass, and other is when entire process is complete.
+
+
+
+
+
