@@ -30,7 +30,7 @@ In building the K-Nearest Neighbor algorithm on MNIST dataset, I followed these 
 ◆ Conducted a 5-fold cross validation on training set, to pick the best candidate model of K ={1,3,5,7,9}.
 ◆ Created a test dataset from MNIST test data consisting of 50 examples of each of three classes {1,2,7}.
 ◆ Using the best Nearest neighbor model selected by model validation, classified the test data.
-◆ Compared teh accuracy of model on test data with its cross-validation accuracy and plotted some test set examples which are correctly and incorrectly.
+◆ Compared the accuracy of model on test data with its cross-validation accuracy and plotted some test set examples which are correctly and incorrectly.
 
 In buildling K-means clustering algorithm on MNIST dataset, I followed these steps after shaping them as explained previously.
 
