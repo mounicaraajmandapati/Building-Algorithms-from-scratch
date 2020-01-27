@@ -50,7 +50,25 @@ In building a Hidden Markov Model, I followed these steps:
 ◆ Generated 2 plots of estimate state probability of a loaded die at time t, compared to actual state(which was generated earlier)
 ◆ One plot is estimate after performing forward pass but before computing the backward pass, and other is when entire process is complete.
 
+In building a Linear Regression, I followed these steps:
 
+◆ Using a crash.txt dataset , which contains measurements from a crash test dummy during NHSA automobile crash test. Column 0 measures time in milliseconds after the crash event and column 1 represents the acceleration measured by a sensor on dummy's head.
+◆ Divided the data into a training and validation set of equal size - even numbered rows to training set and odd numbered rows to validate. 
+◆ I built 3 models : Linear Regression with polynomial basis function, Linear Regression with radial basis function, and with Bayesian MAP estimates.
+◆ Linear Regression with polynomial basis function - Fitted sets of L polynomial basis functions to training set to determine their linear weight using the normal equation. Tried L= 1,2,...20 and for each value of L, computed the maximum likelihood RMS error between actual data and model's prediction on both training and validation sets. Plotted these errors. Also, plotted both training and validation data and points with output of model function with lowest RMS on validation data.
+◆ Linear Regression with radial basis function - Performed the same procedure as with polynomial fit, except used radial basis function. The function centers are evenly spaced across range of x (i.e 0-60), and the standard deviation of function is distance between one basis function mean and the next. Used L = 5,10,15,20,25 and plotted RMS on training and validation data. Also, plotted the RMS and best-fit model.
+◆ To reduce the instability of ML estimates, introduced a Bayesian prior which is expressed as beta(an estimate of the inverse variance of noise in the system) and alpha (an estimate of inverse variance between the actual generative function in real world and our choice of model.). By eyeballing the noise in the data plot, it looks like a resonable estimate of standard deviation can be 20. This corresponds to beta as (1/20 * 20) i.e 0.0025. Using this as an estimate of beta, considered 100 candidate values for alpha spaced logarithically between (10 ** -8) and ( 10 ** 0). Applied this prior to the linear equation on training set and using L=50 radial basis functions. Found an appropriate value of alpha with the best performance on validation set.
 
+In building a Logistic Regression, I followed these steps:
+
+◆ used Iris dataset for this model. Seperated the data into features and labels and turned the label array into N * 1 array with different numbers delineating different classes into an N * K membership array (one-hot array).
+◆ Added a column of ones to data to allow a bias term.
+◆ Divided the features and labels in half to make proportional numbers of each class in each set.
+◆ Implemented a fucntion f(w) which can be passed to scipy.optimize.minimize for gradient descent.
+◆ Used linear transformations on data ( no nonlinear basis functions) which means there are four data dimensions and a bias term.
+◆ Also added a gaussian prior to deal with potential degenerate behaviour. 
+◆ Picked an alpha that was reasonable and implemented a objection function whose minimum is MAP estimates of weight vectors.
+◆ passed this function to minimize. The best-fit posterior estimate of w obtained from before minimize function(x) is used to obtain the class posterior probalities of test set using softmax function.
+◆ Classified the test set points according to highest probability produced by softmax and reported overall classification accuracy.
 
 
